@@ -9,6 +9,7 @@ from telluric.constants import WGS84_CRS
 
 
 def fill_height(coords):
+    # this assumes 0 elevation for all points
     for x, y in coords:
         yield x, y, 0
 
@@ -31,7 +32,8 @@ def packet_from_point(feat, id_=None):
         description=description,
         point=Point(color=color, pixelSize=5),
         position=Position(
-            cartographicDegrees=[point.x, point.y, get_elevation(point.x, point.y)]
+            # this assumes 0 elevation for all points
+            cartographicDegrees=[point.x, point.y, 0]
         ),
     )
 
