@@ -1,5 +1,3 @@
-import pandas as pd
-import requests
 from czml3 import Document, Packet, Preamble
 from czml3.properties import (Color, Material, Point, Polygon, Polyline,
                               PolylineMaterial, Position, PositionList,
